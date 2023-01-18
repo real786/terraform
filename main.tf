@@ -6,7 +6,7 @@ provider "aws" {
 
 resource "aws_s3_bucket" "onebucket" {
   bucket = "terraform-bucket"
-  acl    = "public-read"
+  acl    = "private"
   versioning {
     enabled = false
   }
