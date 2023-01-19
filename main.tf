@@ -5,7 +5,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "onebucket" {
-  bucket = "01111202023"
+  bucket = "011111202023"
   acl    = "public-read"
   versioning {
     enabled = false
