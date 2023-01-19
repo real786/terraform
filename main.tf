@@ -5,25 +5,10 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "onebucket" {
-  bucket = "01182023"
-  acl    = "private"
+  bucket = "01192023"
+  acl    = "public-read"
   versioning {
-    enabled = true
-  }
-  server_side_encryption_configuration {
-    rule {
-      apply_server_side_encryption_by_default {
-        sse_algorithm = "AES256"
-      }
-    }
+    enabled = false
   }
 }
 
-resource "aws_s3_bucket_public_access_block" "artifacts" {
-  bucket = aws_s3_bucket.onebucket.id
-
-  block_public_acls       = true
-  block_public_policy     = true
-  restrict_public_buckets = true
-  ignore_public_acls      = true
-}
